@@ -42,7 +42,7 @@ while altitude > 0:
     altitude -= speed
     speed += gravity - burn / 10
     fuel -= burn
-# loop has ended so we must have hit moon's surface
+# loop has ended, so we must have hit moon's surface
 # display final flight data and assess whether it was a crash or a good landing
 print("Altitude={:8.3f} Speed={:6.3f} Fuel={:8.3f} Last burn={:6.3f}".format(altitude, speed, fuel, burn))
 if altitude < - 5 or speed > 5:

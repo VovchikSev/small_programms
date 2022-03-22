@@ -20,11 +20,10 @@ class Ship:
     impact = altitude / speed
 
     def set_burn(self, in_burn: str):
-
-        if in_burn.isdigit():
+        try:
+            burn_value = float(in_burn)
+        except ValueError:
             burn_value = 0
-        else:
-            burn_value = int(in_burn)
 
         if burn_value < 0:
             self.burn = 0
@@ -33,6 +32,7 @@ class Ship:
         else:
             self.burn = burn_value
 
+        # вычисления данных полета
         self.altitude -= self.speed
         self.speed += self.GRAVITY - self.burn / 10
         self.fuel -= self.burn
